@@ -5,7 +5,7 @@ from datetime import datetime
 # Define paths
 date_str = datetime.now().strftime('%Y-%m-%d')
 date_directory = f'/tmp/html-report/{date_str}'
-index_file_path = '/tmp/html-report/index.html'
+index_file_path = '/tmp/html-report/uhartprodserversindex.html'
 dest_path = '/shared/html-report'
 
 # Get list of HTML files
