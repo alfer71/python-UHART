@@ -4,9 +4,13 @@ from datetime import datetime
 
 # Define paths
 date_str = datetime.now().strftime('%Y-%m-%d')
-date_directory = f'/tmp/html-report/uhart/{date_str}'
-index_file_path = '/tmp/html-report/uhart/{date_str}/uhartnonprodserversindex.html'
+base_path = '/tmp/html-report/uhart'
+date_directory = os.path.join(base_path, date_str)
+index_file_path = os.path.join(base_path, 'uhartnonprodserversindex.html')
 dest_path = '/shared/html-report'
+
+# Ensure base path exists
+os.makedirs(base_path, exist_ok=True)
 
 # Check if the date directory exists
 if not os.path.exists(date_directory):
@@ -35,4 +39,4 @@ with open(index_file_path, 'w') as index_file:
 shutil.copytree('/tmp/html-report', '/shared/html-report', dirs_exist_ok=True)
 
 print(f'Index file created at: {index_file_path}')
-print(f'Files copied from {date_directory} to {dest_path}')
+print(f'Files copied from {base_path} to {dest_path}')
