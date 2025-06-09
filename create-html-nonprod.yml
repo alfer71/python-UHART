@@ -8,6 +8,13 @@ date_directory = f'/tmp/html-report/{date_str}'
 index_file_path = '/tmp/html-report/uhartnonprodserversindex.html'
 dest_path = '/shared/html-report'
 
+# Check if the date directory exists
+if not os.path.exists(date_directory):
+    os.makedirs(date_directory)
+    print(f"Directory {date_directory} did not exist and has been created.")
+    print("No reports to process yet. Exiting script.")
+    exit(0)
+
 # Get list of HTML files
 html_files = [f for f in os.listdir(date_directory) if f.endswith('.html')]
 
