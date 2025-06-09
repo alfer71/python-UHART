@@ -4,8 +4,8 @@ from datetime import datetime
 
 # Define paths
 date_str = datetime.now().strftime('%Y-%m-%d')
-date_directory = f'/tmp/html-report/{date_str}'
-index_file_path = '/tmp/html-report/uhartnonprodserversindex.html'
+date_directory = f'/tmp/html-report/uhart/{date_str}'
+index_file_path = '/tmp/html-report/uhart/{date_str}/uhartnonprodserversindex.html'
 dest_path = '/shared/html-report'
 
 # Check if the date directory exists
